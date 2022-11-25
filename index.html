@@ -1,0 +1,261 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>欸嘿嘿嘿~</title>
+
+   <!-- custom css file link  -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+*{
+   font-family: 'Poppins', sans-serif;
+   margin:0; padding:0;
+   box-sizing: border-box;
+   outline: none; border:none;
+   text-decoration: none;
+   text-transform: capitalize;
+}
+
+body{
+   background-color: coral;
+   padding:20px;
+}
+
+.container{
+   max-width: 1200px;
+   margin:100px auto;
+   display: flex;
+   flex-wrap: wrap;
+   align-items: flex-start;
+   gap:20px;
+}
+
+.container .main-video-container{
+   flex:1 1 700px;
+   border-radius: 5px;
+   box-shadow: 0 5px 15px rgba(0,0,0,.1);
+   background-color: #fff;
+   padding:15px;
+}
+
+.container .main-video-container .main-video{
+   margin-bottom: 7px;
+   border-radius: 5px;
+   width: 100%;
+}
+
+.container .main-video-container .main-vid-title{
+   font-size: 20px;
+   color:#444;
+}
+
+.container .video-list-container{
+   flex:1 1 350px;
+   height: 485px;
+   overflow-y: scroll;
+   border-radius: 5px;
+   box-shadow: 0 5px 15px rgba(0,0,0,.1);
+   background-color: #fff;
+   padding:15px;
+}
+
+.container .video-list-container::-webkit-scrollbar{
+   width: 10px;
+}
+
+.container .video-list-container::-webkit-scrollbar-track{
+   background-color: #fff;
+   border-radius: 5px;
+}
+
+.container .video-list-container::-webkit-scrollbar-thumb{
+   background-color: #444;
+   border-radius: 5px;
+}
+
+.container .video-list-container .list{
+   display: flex;
+   align-items: center;
+   gap:15px;
+   padding:10px;
+   background-color: #eee;
+   cursor: pointer;
+   border-radius: 5px;
+   margin-bottom: 10px;
+}
+
+.container .video-list-container .list:last-child{
+   margin-bottom: 0;
+}
+
+.container .video-list-container .list.active{
+   background-color: #444;
+}
+
+.container .video-list-container .list.active .list-title{
+   color:#fff;
+}
+
+.container .video-list-container .list .list-video{
+   width: 100px;
+   border-radius: 5px;
+}
+
+.container .video-list-container .list .list-title{
+   font-size: 17px;
+   color:#444;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:1200px){
+
+   .container{
+      margin:0;
+   }
+
+}
+
+@media (max-width:450px){
+
+   .container .main-video-container .main-vid-title{
+      font-size: 15px;
+      text-align: center;
+   }
+
+   .container .video-list-container .list{
+      flex-flow: column;
+      gap:10px;
+   }
+
+   .container .video-list-container .list .list-video{
+      width: 100%;
+   }
+
+   .container .video-list-container .list .list-title{
+      font-size: 15px;
+      text-align: center;
+   }
+
+}
+</style>
+
+<link href="https://vjs.zencdn.net/7.4.1/video-js.css" rel="stylesheet">
+    <script src='https://vjs.zencdn.net/7.4.1/video.js'></script>
+    <!-- videojs-contrib-hls 用于在电脑端播放 如果只需手机播放可以不引入 -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/videojs-contrib-hls/5.15.0/videojs-contrib-hls.min.js"></script>
+</head>
+<body>
+   
+<div class="container">
+
+   <div class="main-video-container">
+	  <video id="myVideo" class="video-js vjs-default-skin vjs-big-play-centered vjs-16-9" controls preload="auto" data-setup='{}' loop controls class="main-video">
+			<source id="source" src="https://v3-ot01.kwaicdn.com/bs3/video-hls/5238530879659336949_hlsb.m3u8?pkey=AAWeJvWyY0LSs8S0Lprnv77Cf2gM8fsy6nNkhqntRa--rfkC6R4dCv_DJtqx-w54qxGvfzu-1IpoC98xZNuWxx1R2ZD3Aytd8_fTQPxNHUK1txBOh-TOkSWrxZY7ljTpYdw&ss=vp" type="application/x-mpegURL"></source>
+	  </video>
+      <h3 class="main-vid-title">啥是个感觉嘛</h3>
+   </div>
+
+   <div class="video-list-container"><!-- 播放列表 -->
+		<div class="list">
+		   <video src="https://v3-ot01.kwaicdn.com/bs3/video-hls/5238530879659336949_hlsb.m3u8?pkey=AAWeJvWyY0LSs8S0Lprnv77Cf2gM8fsy6nNkhqntRa--rfkC6R4dCv_DJtqx-w54qxGvfzu-1IpoC98xZNuWxx1R2ZD3Aytd8_fTQPxNHUK1txBOh-TOkSWrxZY7ljTpYdw&ss=vp8" class="list-video" poster="https://p2.a.yximgs.com/upic/2022/11/18/22/BMjAyMjExMTgyMjE0MDJfMjg1NjQwNTM5OV84OTAyMTIwMDkyNV8wXzM=_ccc_Bad7860d105c696441a2f6050f9ca3a1b.jpg?tag=1-1669370582-xpcwebprofile-0-db1tvd1gfn-1f718efb07b4cd9a&clientCacheKey=3xr8wuakzgtd8we_ccc.jpg&di=da0b6fb4&bp=14734"></video>
+		   <h3 class="list-title">啥是个感觉嘛</h3>
+		</div>
+	   <div class="list">
+	      <video src="https://v4-vod.kwaicdn.com/bs3/video-hls/5239938252620645812_hlsb.m3u8?pkey=AAVCeA_tgDDFsyUOpQFG_Q43Wig6RwPhYWTDiFnjYo4DhMrdmh72albJZel0bCG7AIx2ftJrigbUBongxXR2fFd9qXMaX6mKOy6ZJ0NyGhwuq_RJ2smhJGQ5deUaxZZXc7Q&ss=vp" class="list-video" poster="https://p1.a.yximgs.com/upic/2022/11/16/18/BMjAyMjExMTYxODAyMzNfMjk4MDMyMDMzN184ODg1NjAyNjA0M18wXzM=_Bb74cf2a19118a1cab505bc40f19f52e0.jpg?tag=1-1669370960-unknown-0-30j4pdxoty-7cf8e7dbbf4ff912&clientCacheKey=3xwp2qfxgf7ffmi.jpg&di=da0b6fb4&bp=14764"></video>
+	      <h3 class="list-title">王纪琼教育新概念</h3>
+	   </div>
+	   <div class="list">
+	      <video src="https://v1.kwaicdn.com/upic/2022/11/16/22/BMjAyMjExMTYyMjAwMjJfMjg1NzkwMDQ1OF84ODg3NjM3OTUzMl8xXzM=_b_B1162148e2110bce4039cf6d79d4eeb86.mp4?pkey=AAVoM2Dc6dXj0ZRe0zcdh4rJdcfp-D59sNCrO2X_d9fCdhXMcApB8yShQrksIg6ChViwmbNOxJPXD0H0EF8w35-cCQ2eloAiCfCoifinzPIycbPyw-DW32wxik6rAxbleug&tag=1-1669370972-unknown-0-c7uqyv2hdf-b361d1d7eb2a2e70&clientCacheKey=3x3mk9ab8vxwnfu_b.mp4&di=da0b6fb4&bp=14764&tt=b&ss=vp" class="list-video" poster="https://p1.a.yximgs.com/upic/2022/11/16/22/BMjAyMjExMTYyMjAwMjJfMjg1NzkwMDQ1OF84ODg3NjM3OTUzMl8xXzM=_B9b3bdaf5267ae4f027c3570e9141f081.jpg?tag=1-1669370972-unknown-0-ykosnkhczh-ecbbf98b0fa56606&clientCacheKey=3x3mk9ab8vxwnfu.jpg&di=da0b6fb4&bp=14764"></video>
+	      <h3 class="list-title">世界上有两个我</h3>
+	   </div>
+	   <div class="list">
+	      <video src="https://v22dyluiki3tkzuzeu2542cqrr40tmc3v.mobgslb.tbcache.com/v2.kwaicdn.com/upic/2021/12/17/10/BMjAyMTEyMTcxMDU5NDRfMjM4ODczNzA4MF82MjkyNDIwODI0MV8wXzM=_b_B05c309922461f3803e4de7414a6f3dd1.mp4?pkey=AAVNbRPcyYfEsJKBtD0P8n5tb2lJPON_8teCSH5sOY0GsGCSUvfgdQFw_F53n59ZHYZZZB78hpxhoe3JXeDU0WMbEv_Jov2elQdndtG7beBVQY--m4cYW7wSWNAvR3QNyEI&tag=1-1669385381-unknown-0-fca5pmldwz-d26b8cba87682dd4&clientCacheKey=3x592rswuz6cude_b.mp4&di=da0b6fb4&bp=10004&tt=b&ss=vp&ali_redirect_ex_hot=66666800&ali_redirect_ex_beacon=1" class="list-video"></video>
+	      <h3 class="list-title">章义伍谈流程</h3>
+	   </div>
+	   <div class="list">
+	      <video src="https://v2x4d6l8u5mskh5l8jkd3c6s83odi6eup.mobgslb.tbcache.com/v2.kwaicdn.com/upic/2021/10/23/17/BMjAyMTEwMjMxNzIxNDhfNTI1NzQzNjc1XzU5NTQxMjUzOTA3XzBfMw==_b_Bcd8729ce3a6e5c00a586384c45ad8b74.mp4?pkey=AAXT3ycBikQc7hwFDAYcuxGWdpGAljYhC27FvTCXufC2EP9PAoKzx9CQXca-6hS4f0g8oUXsztmr51sqsX3ZGYUgOxcJG1mZr972dYQpIUUo1BZG_AQoxW7nV3rLJmuE-do&tag=1-1669385528-unknown-0-ujq5kidmor-101a5c114ef7e58a&clientCacheKey=3xnzgmmh3zb3rq6_b.mp4&di=da0b6fb4&bp=10004&tt=b&ss=vp&ali_redirect_ex_hot=66666800&ali_redirect_ex_beacon=1" class="list-video" poster=""></video>
+	      <h3 class="list-title">有家人的地方，才最美好</h3>
+	   </div>
+	   <div class="list">
+	      <video src="https://v2l0wrqp3vrrgf0saequtm7yhcrhlvr7d.mobgslb.tbcache.com/v2.kwaicdn.com/upic/2022/10/03/13/BMjAyMjEwMDMxMzI5NDhfMjMzNjk3MDM0MV84NTU4NjY1ODU3M18xXzM=_b_B1492582a0f910a0adab8f6d11a572904.mp4?pkey=AAUTSMNcHdvW9_1ETldsq2l4UqLVhx0_s_PPRhfMW8gSwDbvwAonIv85ioM1IVl4sRQ6qz_Fjnhqo74SyIIfVLjpdhAZeBXizcd_xLE2KFQz1oCzZ1pnTvmcC3H4YQPqGVY&tag=1-1669385474-unknown-0-3d0ajol87a-18a2d578a28a6a78&clientCacheKey=3xdpsgm8em637ig_b.mp4&di=da0b6fb4&bp=10004&tt=b&ss=vp&ali_redirect_ex_hot=66666800&ali_redirect_ex_beacon=1" class="list-video"></video>
+	      <h3 class="list-title">爱而不得才是人生常态</h3>
+	   </div>
+	   <div class="list">
+	      <video src="https://txmov2.a.kwimgs.com/upic/2022/06/21/11/BMjAyMjA2MjExMTE4MDVfMTQ5Mzc0NjEwXzc3MjcwOTI3MzEyXzFfMw==_b_B057fe8a0aaaf7847ec5b2760b45b35ec.mp4?clientCacheKey=3xaa4dh67gwy8yw_b.mp4&tt=b&di=da0b6fb4&bp=10000" class="list-video"></video>
+	      <h3 class="list-title">此生固短 无你何欢</h3>
+	   </div>
+	   <div class="list">
+	      <video src="https://v2x4d6l8u5mskh5l8jkd3c6s83odi6eup.mobgslb.tbcache.com/v2.kwaicdn.com/upic/2022/11/06/14/BMjAyMjExMDYxNDU3MDJfMjY1MDY2MDQ5MV84ODEwMTMyNzM0N18xXzM=_b_B28788cb070a7b122fc02e2a461f5143c.mp4?pkey=AAU2996xlM35ViD629ln8AscqdPkMJ4-fwyoiPUZ7rYB8zirVyDEm5zYC65SqYlHHIQ1aUpMiR_SuYoCV8vj6jukBO9P2iLMY7kyZHChGWjKt6-y3SfmnFFKTX58eSVQd0M&tag=1-1669385872-unknown-0-oyrctzicq5-2ed2c9a2a26ec2d3&clientCacheKey=3xyg7zu6fa7rngs_b.mp4&di=da0b6fb4&bp=10004&tt=b&ss=vp&ali_redirect_ex_hot=66666800&ali_redirect_ex_beacon=1" class="list-video"></video>
+	      <h3 class="list-title">梁山伯与祝英台</h3>
+	   </div>
+	   <div class="list">
+	      <video src="https://v1.kwaicdn.com/upic/2021/02/22/11/BMjAyMTAyMjIxMTI2MjdfMTg5NzIzNDkyNl80NDgwNjU5MTQwM18wXzM=_b_B0b854487d6db1aef3041629791db4fb6.mp4?pkey=AAVdL63H6BaLQpvkNBF5eUS9V47EhiaFKdTEPbMjjuje5vcaHsK7LYlByLDZ6AefxkN9FopRGwmtGqRtglTgq5sq7dkukf6nW23E9DxsDDX6f3D130IZY8KUP9lFaeWbSUQ&tag=1-1669387256-unknown-0-qffux3gurx-5d50d84cea17b925&clientCacheKey=3xrkmpgregkcfac_b.mp4&di=da0b6fb4&bp=14734&tt=b&ss=vp" class="list-video"></video>
+	      <h3 class="list-title">回顾｜《原神》海灯节</h3>
+	   </div>
+	   <div class="list">
+	      <video src="https://v21242cwz23gzdfygpr5cm863p3o0fah2.mobgslb.tbcache.com/v2.kwaicdn.com/upic/2022/01/17/15/BMjAyMjAxMTcxNTU0NDJfMTIxNjIyNDc1XzY1MDc0MzEyMzcyXzFfMw==_b_Bd8cf2a006cf63e70fbf7f69f89f52cdc.mp4?pkey=AAWr_B1lmP_ZJzNgy1sQznomDWpivFU2D7MoKRYfNuWDoVN7fTAkMBNnx7SiAuSGWdN0b_r19tBE7w_q8OwEAKDhyNr8uWWmwbadKvfTfXswG4cMqAjNHnnDB0lc0CAPVNc&tag=1-1669388181-unknown-0-swmuq0bwwl-8e2f71cdeea8aaca&clientCacheKey=3xspks8r8gjpf54_b.mp4&di=da0b6fb4&bp=14764&tt=b&ss=vp&ali_redirect_ex_hot=66666800&ali_redirect_ex_beacon=1" class="list-video"></video>
+	      <h3 class="list-title">小宋不吃葱</h3>
+	   </div>
+	   <div class="list">
+	      <video src="https://v1.kwaicdn.com/upic/2022/01/11/17/BMjAyMjAxMTExNzMyNTdfMjAwMDI2MTM5M182NDY2NTk5Njg1Nl8xXzM=_b_Ba2923e1de4b0b1372c760cf6bc658f89.mp4?pkey=AAWoaPC__w1bBigkuFHGJmUQClqi2KX69dDYq2sVZctZDw9U8CC7Memn3fp4DGH6k01AbFe4m73Q3cTCX2F1plQ0vws6CAbeSHmHNcx6ky6h_13C2lQcB14sYpqvguNlxqU&tag=1-1669388181-unknown-0-eu1wkndk3z-95297fb7e0f8cf3d&clientCacheKey=3xuqkbh2ake2b99_b.mp4&di=da0b6fb4&bp=14764&tt=b&ss=vp" class="list-video" poster=""></video>
+	      <h3 class="list-title">伍玥安</h3>
+	   </div>
+   </div>
+
+</div>
+<!-- custom js file link  -->
+<script>
+let videoList = document.querySelectorAll('.video-list-container .list');
+
+videoList.forEach(vid =>{
+   vid.onclick = () =>{
+      videoList.forEach(remove =>{remove.classList.remove('active')});
+      vid.classList.add('active');
+      let src = vid.querySelector('.list-video').src;
+      let title = vid.querySelector('.list-title').innerHTML;
+	  // videojs 简单使用
+	  var myVideo = videojs('myVideo', {
+	      bigPlayButton: true,
+	      textTrackDisplay: false,
+	      posterImage: false,
+	      errorDisplay: false,
+	  })
+	  var changeVideo = function (vdoSrc) {
+	      if (/\.m3u8$/.test(vdoSrc)) { //判断视频源是否是m3u8的格式
+	          myVideo.src({
+	              src: vdoSrc,
+	              type: 'application/x-mpegURL' //在重新添加视频源的时候需要给新的type的值
+	          })
+	      } else {
+	          myVideo.src(vdoSrc)
+	      }
+		   //myVideo.pause() // 视频暂停
+	      myVideo.load();//视频重载
+	      myVideo.play()// 视频播放
+	   
+	  }
+	  //var src = 'http://1252093142.vod2.myqcloud.com/4704461fvodcq1252093142/f865d8a05285890787810776469/playlist.f3.m3u8';
+	  changeVideo(src);
+      document.querySelector('.main-video-container .main-vid-title').innerHTML = title;
+   };
+});
+</script>
+</body>
+</html>
